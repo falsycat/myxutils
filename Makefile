@@ -1,4 +1,9 @@
-all: smoothlight
+TARGETS=smoothlight
+all: $(TARGETS)
 
 smoothlight: smoothlight.c
-	gcc $< -o $@ -lxdo
+	gcc $< -o $@ -lxdo $(CFLAGS)
+
+.PHONY: clean
+clean:
+	rm $(TARGETS)
